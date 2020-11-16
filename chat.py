@@ -15,13 +15,21 @@ def change_message(message):
 		if name:
 			new_message.append(name + ": " + line)
 
-def show(new_message):
-	for line in new_message:
-		print(line)
+def print_file(output):
+ 	with open(output, "r", encoding = "utf-8-sig") as new_chat_file:
+ 		for line in new_chat_file:
+ 			print(line.strip())
+
+def write_file(file):
+	with open(file, "w", encoding = "utf-8-sig") as new_file:
+		for line in new_message:
+				new_file.write(line + "\n")
 
 def main():
 	read_file("input.txt")
 	change_message(message)
-	show(new_message)
+	write_file("output.txt")
+	print_file("output.txt")
 
-main()
+if __name__ == '__main__':
+	main()
