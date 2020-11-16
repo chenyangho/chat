@@ -7,12 +7,12 @@ def read_file(file):
 			message.append(line.strip())
 
 def change_message(message):
-	name = ""
+	name = None
 	for line in message:
 		if line == "Allen" or line == "Tom":
 			name = line
 			continue
-		if name != None:
+		if name:
 			new_message.append(name + ": " + line)
 
 def show(new_message):
